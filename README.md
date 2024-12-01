@@ -100,8 +100,8 @@ O projeto utiliza o H2 Database para fins de desenvolvimento. O console do H2 po
 [http://localhost:8080/h2-console](http://localhost:8080/h2-console)
 
 **Configurações Padrão:**
-- **URL:** `jdbc:h2:mem:testdb`
-- **Usuário:** `sa`
+- **URL:** `jdbc:h2:file:./DataCenter.db`
+- **Usuário:** (em branco)
 - **Senha:** (em branco)
 
 ## Melhorias Futuras
@@ -114,4 +114,4 @@ Contribuições são bem-vindas! Para reportar problemas ou sugerir melhorias, a
 
 ---
 
-Desenvolvido por **Silvio Virtuoso** com Spring Boot e Java.
+Desenvolvido por **Silvio Virtuoso** & **Vitor Koch Wessler** com Spring Boot e Java.
