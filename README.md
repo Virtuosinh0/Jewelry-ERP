@@ -15,6 +15,7 @@ Este projeto é uma API REST para gerenciar informações sobre joias. Ele permi
 - **Spring Boot 2.7.x**
   - Spring Web
   - Spring Data JPA
+- **Validation**
 - **H2 Database** (banco de dados em memória para desenvolvimento/testes)
 - **Maven** (gerenciador de dependências)
 
