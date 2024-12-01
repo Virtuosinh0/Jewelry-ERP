@@ -49,7 +49,7 @@ Este projeto é uma API REST para gerenciar informações sobre joias. Ele permi
 ```
 
 ### **2. Listar Todas as Joias**
-`GET /jewelry/getAll`
+`GET /jewelry`
 
 **Response:**
 ```json
