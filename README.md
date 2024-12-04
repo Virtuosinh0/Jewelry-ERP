@@ -1,7 +1,5 @@
 # Jewelry-ERP
 
-# Jewelry API Project
-
 ## Descrição
 Este projeto é uma API REST para gerenciar informações sobre joias. Ele permite criar, listar e buscar detalhes de joias armazenadas no sistema. A aplicação foi desenvolvida em Java utilizando o framework Spring Boot.
 
