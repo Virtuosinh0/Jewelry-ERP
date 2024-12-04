@@ -20,8 +20,6 @@ public class JewelryService {
     JewerlyRepository jewerlyRepository;
     @Autowired
     JewerlyMapper jewerlyMapper;
-    //@Autowired
-    //GroupRepository groupRepository;
 
     public JewelryResponseDto insertJewelry(JewelryRequestDto jewelryRequestDto){
         Jewelry jewelry = new Jewelry();
@@ -37,6 +35,38 @@ public class JewelryService {
     public List<JewelryResponseDto> returnJewelry(Integer page, Integer pageSize){
         Pageable pageConfig = PageRequest.of(page, pageSize);
         return jewerlyRepository.findAll(pageConfig).stream().map(jewerlyMapper::toDto).toList();
+    }
+
+    public JewelryResponseDto profitJewelryByID (UUID id, Float profit){
+        Jewelry jewelry = jewerlyRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Jóia não encontrada")
+        );
+        jewelry.setProfit(profit);
+        jewerlyRepository.save(jewelry);
+        return jewerlyMapper.toDto(jewelry);
+    }
+
+    public JewelryResponseDto buyJewelryByID (UUID id){
+        Jewelry jewelry = jewerlyRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Jóia não encontrada")
+        );
+        if (jewelry.getToSell()) {
+            jewelry.setSold(true);
+            jewelry.setToSell(false);
+            jewerlyRepository.save(jewelry);
+            return jewerlyMapper.toDto(jewelry);
+        }else {
+            throw new RuntimeException("Jóia não está disponível para venda");
+        }
+    }
+
+    public JewelryResponseDto changeStateJewelryByID (UUID id){
+        Jewelry jewelry = jewerlyRepository.findById(id).orElseThrow(
+                () -> new RuntimeException("Jóia não encontrada")
+        );
+        jewelry.setToSell(!jewelry.getToSell());
+        jewerlyRepository.save(jewelry);
+        return jewerlyMapper.toDto(jewelry);
     }
 
     public JewelryResponseDto returnJewelryByID (UUID id){

@@ -33,6 +33,21 @@ public class JewerlyController {
         return jewelryService.returnJewelry(page, pageSize);
     }
 
+    @GetMapping("/profit")
+    public JewelryResponseDto profitJewelryByID(@RequestParam UUID id, @RequestParam Float profit){
+        return jewelryService.profitJewelryByID(id, profit);
+    }
+
+    @GetMapping("/change")
+    public JewelryResponseDto changeJewelryByID(@RequestParam UUID id){
+        return jewelryService.changeStateJewelryByID(id);
+    }
+
+    @GetMapping("/buy")
+    public JewelryResponseDto buyJewelryByID(@RequestParam UUID id){
+        return jewelryService.buyJewelryByID(id);
+    }
+
     @GetMapping("/{id}")
     public JewelryResponseDto returnById(@PathVariable UUID id){
         return jewelryService.returnJewelryByID(id);

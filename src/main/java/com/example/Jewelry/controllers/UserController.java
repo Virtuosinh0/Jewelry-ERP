@@ -2,6 +2,7 @@ package com.example.Jewelry.controllers;
 
 import com.example.Jewelry.dtos.ErrorDto;
 import com.example.Jewelry.dtos.UserRequestDto;
+import com.example.Jewelry.dtos.LoginRequestDto;
 import com.example.Jewelry.dtos.UserResponseDto;
 import com.example.Jewelry.services.UserService;
 import jakarta.servlet.http.HttpServletRequest;
@@ -12,15 +13,20 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/users")
 public class  UserController {
     @Autowired
     UserService userService;
 
-    @PostMapping
+    @PostMapping ("/users")
     @ResponseStatus(HttpStatus.CREATED)
     public UserResponseDto insertUser(@RequestBody @Valid UserRequestDto userRequestDto) {
         return userService.insertUser(userRequestDto);
+    }
+
+    @GetMapping ("/login")
+    @ResponseStatus(HttpStatus.OK)
+    public UserResponseDto loginUser(@RequestBody @Valid LoginRequestDto loginRequestDto){
+        return userService.loginUser(loginRequestDto);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)

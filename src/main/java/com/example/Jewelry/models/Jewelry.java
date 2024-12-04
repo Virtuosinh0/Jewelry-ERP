@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -20,6 +21,7 @@ public class Jewelry {
     private Float price;
     private Boolean Sold = false;
     private Boolean toSell = false;
+    //private List<DataFile> dataFiles;
 
     public Boolean getToSell() {
         return toSell;
@@ -92,6 +94,10 @@ public class Jewelry {
     public void setMetal(String metal) {
         this.metal = metal;
     }
+
+    //public List<DataFile> getDataFiles() {return dataFiles;}
+
+    //public void setDataFiles(List<DataFile> dataFiles) {this.dataFiles = dataFiles;}
 }
 
 
