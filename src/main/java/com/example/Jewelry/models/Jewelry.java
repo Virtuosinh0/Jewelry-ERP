@@ -44,8 +44,8 @@ public class Jewelry {
     }
 
     public void setPrice(Float price) {
-        this.supplierprice = this.price;
         this.price = price;
+        this.supplierprice = this.price;
     }
 
     public Float getProfit() {
