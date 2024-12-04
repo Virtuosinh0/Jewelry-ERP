@@ -90,6 +90,52 @@ Este projeto é uma API REST para gerenciar informações sobre joias. Ele permi
   "reason": "Jóia não encontrada"
 }
 ```
+### **4. Buscar Joia por ID**
+`GET /jewelry/profit?id={id}&profit={profit}`
+
+**Request Param:**
+- `id`: UUID da joia a ser buscada
+- `profit`: Float do lucro de venda
+
+**Response:**
+```json
+{
+  "price": 2000.0,
+  "metal": "Gold",
+  "gemstone": "Diamond"
+}
+```
+
+**Erro (ID Inválido):**
+```json
+{
+  "status": "INTERNAL_SERVER_ERROR",
+  "reason": "Jóia não encontrada"
+}
+```
+
+### **5. Deletar Joia por ID**
+`DELETE /jewelry/{id}`
+
+**Path Variable:**
+- `id`: UUID da joia a ser deletada
+
+**Response:**
+```json
+{
+  "price": 2000.0,
+  "metal": "Gold",
+  "gemstone": "Diamond"
+}
+```
+
+**Erro (ID Inválido):**
+```json
+{
+  "status": "INTERNAL_SERVER_ERROR",
+  "reason": "Jóia não encontrada"
+}
+```
 
 ## Como Rodar o Projeto
 
