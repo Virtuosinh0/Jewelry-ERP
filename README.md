@@ -149,9 +149,6 @@ O projeto utiliza o H2 Database para fins de desenvolvimento. O console do H2 po
 - **Usuário:** (em branco)
 - **Senha:** (em branco)
 
-## Contribuições
-Contribuições são bem-vindas! Para reportar problemas ou sugerir melhorias, abra uma issue no repositório.
-
 ---
 
 Desenvolvido por **Silvio Virtuoso** & **Vitor Koch Wessler** com Spring Boot e Java.
