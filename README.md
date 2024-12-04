@@ -149,11 +149,6 @@ O projeto utiliza o H2 Database para fins de desenvolvimento. O console do H2 po
 - **Usuário:** (em branco)
 - **Senha:** (em branco)
 
-## Melhorias Futuras
-- Implementar autenticação e autorização para os endpoints.
-- Configurar Swagger para documentar a API.
-- Persistir os dados utilizando um banco de dados relacional (e.g., PostgreSQL, MySQL).
-
 ## Contribuições
 Contribuições são bem-vindas! Para reportar problemas ou sugerir melhorias, abra uma issue no repositório.
 
